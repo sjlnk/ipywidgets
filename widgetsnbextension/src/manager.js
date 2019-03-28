@@ -9,6 +9,7 @@ var widgets = require("@jupyter-widgets/controls");
 var outputWidgets = require("./widget_output");
 var saveState = require("./save_state");
 var embedWidgets = require("./embed_widgets");
+var exportToHtml = require("./export_to_html");
 var version = require("../package.json").version;
 var output = require("./widget_output");
 
@@ -249,6 +250,7 @@ WidgetManager.prototype._init_menu = function() {
     widgetsSubmenu.appendChild(divider);
     widgetsSubmenu.appendChild(this._createMenuItem('Download Widget State', saveState.action));
     widgetsSubmenu.appendChild(this._createMenuItem('Embed Widgets', embedWidgets.action));
+    widgetsSubmenu.appendChild(this._createMenuItem('Export to Static HTML', exportToHtml.action));
 };
 
 /**
